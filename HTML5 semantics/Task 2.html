@@ -1,0 +1,67 @@
+<!--
+Возьмите пример страницы с предыдущего урока и сверстайте ее
+с использованием тегов семантической разметки.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Block remake</title>
+    <style>
+        body {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        header {
+            width: 100%;
+            height: 200px;
+            background-color: cadetblue;
+        }
+        nav {
+            width: 100%;
+            height: 70px;
+            background-color: lightcoral;
+        }
+        main {
+            height: 500px;
+            width: 100%;
+        }
+        aside {
+            float: left;
+            width: 25%;
+            height: 100%;
+            background-color: lightgreen;
+        }
+        article {
+            float: left;
+            width: 75%;
+            height: 100%;
+            background-color: darkgray;
+        }
+        footer {
+            background-color: royalblue;
+            width: 100%;
+            height: 130px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Шапка
+    </header>
+    <nav>
+        Блок навигации
+    </nav>
+    <main>
+        <aside>
+            Меню
+        </aside>
+        <article>
+            Контент
+        </article>
+    </main>
+    <footer>
+        Подвал сайта
+    </footer>
+</body>
+</html>

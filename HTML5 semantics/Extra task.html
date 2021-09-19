@@ -1,0 +1,40 @@
+<!--
+Поэкспериментируйте с элементами, появившимися в стандарте HTML5.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 теги</title>
+</head>
+<body>
+    <figure>
+        <img src="resources/lyagushka.jpg" width="300">
+        <figcaption>Лягушка</figcaption>
+    </figure>
+    <details>
+        <summary>Лягушка</summary>
+        <p>Л</p>
+        <p>я</p>
+        <p>г</p>
+        <p>у</p>
+        <p>ш</p>
+        <p>к</p>
+        <p>а</p>
+    </details>
+    <p><time datetime="2021-09-19">2021-09-19</time></p>
+    <form oninput="result.value=(val.value * 10)">
+        <p>
+            <p>Умножить на 10</p>
+            <input type="number" name="val" autofocus>
+        </p>
+        <p>
+            Результат: <output name="result">0</output>
+        </p>
+        <ruby style="font-size: 30px">
+            19
+            <rt>Сентября</rt>
+        </ruby>
+    </form>
+</body>
+</html>
