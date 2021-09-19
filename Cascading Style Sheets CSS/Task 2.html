@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Свойства CSS</title>
+    <link href="img/task2.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="mainDiv">
+    <div id="csspicture" >
+        <img style="width: 50%" src="img/CSS.png" alt="CSS"/>
+    </div>
+    <h3> Содержание </h3>
+    <ul>
+        <li>CSS</li>
+        <li>Некоторые свойства CSS</li>
+        <ul>
+            <li>Свойства текста</li>
+            <li>Шрифт</li>
+            <li>Цвет и фон</li>
+            <li>Тени и прозрачность</li>
+            <li>Рамка и контур</li>
+        </ul>
+    </ul>
+    <h3>CSS</h3>
+    <p>
+        CSS (Cascading Styles Sheet) или <i>Каскадные таблицы стилей</i> – это технология, позволяющая определять стили
+        для документов HTML. В связи с тем, что HTML – это содержимое или контент, каскадные стили – это его
+        визуальное представление.
+    </p>
+    <p>
+        Стили соотносятся только с HTML. Формат стиля имеет вид <b>"свойство: значение"</b>, и
+        большинство свойств могут применяться к большинству тегов HTML.
+    </p>
+    <h3>Некоторые свойства CSS</h3>
+    <p>
+        CSS позволяет тегам HTML назначать любые визуальные стили, формируя таким образом
+        уникальный внешний вид сайта. Делается это при помощи свойств CSS. Чтобы посмотреть на работу
+        свойства, наведите курсор на его описание.
+    </p>
+    <h4>Свойства текста</h4>
+    <table>
+        <tr>
+            <th>Свойство</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>letter-spacing</td>
+            <td><span id="letterSpacing">Устанавливает расстояние между символами в пределах элемента</span></td>
+        </tr>
+        <tr>
+            <td>line-height</td>
+            <td><span id="lineHeight">Устанавливает межстрочный<br />интервал текста</span></td>
+        </tr>
+        <tr>
+            <td>text-decoration</td>
+            <td><span id="textDecoration">Добавляет оформление текста в виде подчеркивания, перечеркивания,
+                линии над текстом</span></td>
+        </tr>
+        <tr>
+            <td>text-transform</td>
+            <td><span id="textTransform">Управляет преобразованием текста элемента в заглавные
+                или прописные символы</span></td>
+        </tr>
+        <tr>
+            <td>white-space</td>
+            <td><span id="whiteSpace">Устанавливает,             как отображать пробелы между
+                словами в пределах элемента</span></td>
+        </tr>
+        <tr>
+            <td>word-spacing</td>
+            <td><span id="wordSpacing">Устанавливает расстояние между словами в пределах элемента </span></td>
+        </tr>
+    </table>
+    <h4>Шрифт</h4>
+    <table>
+        <tr>
+            <th>Свойство</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>font-family</td>
+            <td><span id="fontFamily">Задает семейство шрифта, которое будет использоваться<br/>для оформления
+                текста содержимого </span></td>
+        </tr>
+        <tr>
+            <td>font-size</td>
+            <td><span id="fontSize">Определяет размер шрифта </span></td>
+        </tr>
+        <tr>
+            <td>font-style</td>
+            <td><span id="fontStyle">Устанавливает стиль начертания шрифта - обычное, курсивное
+                или наклонное </span></td>
+        </tr>
+        <tr>
+            <td>font-weight</td>
+            <td><span id="fontWeight">Устанавливает насыщенность или "жирность" начертания шрифта </span></td>
+        </tr>
+    </table>
+    <h4>Цвет и фон</h4>
+    <table>
+        <tr>
+            <th>Свойство</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>background-color</td>
+            <td id="backgroundColor"><span>Определяет фоновый цвет элемента </span></td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td><span id="color">Это свойство определяет цвет текста элемента </span></td>
+        </tr>
+        <tr>
+            <td>background-image</td>
+            <td id="backgroundImage"><span>Определяет фоновое изображение элемента </span></td>
+        </tr>
+    </table>
+    <h4>Тени и прозрачность</h4>
+    <table>
+        <tr>
+            <th>Свойство</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>box-shadow</td>
+            <td id="boxShadow"><span>Добавляет тень к элементу</span></td>
+        </tr>
+        <tr>
+            <td>opacity</td>
+            <td><span id="opacity">Определяет уровень прозрачности элемента </span></td>
+        </tr>
+        <tr>
+            <td>text-shadow</td>
+            <td><span id="textShadow">Добавляет тень к тексту </span></td>
+        </tr>
+    </table>
+    <h4>Рамка и контур</h4>
+    <table>
+        <tr>
+            <th>Свойство</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>border-bottom</td>
+            <td><span id="borderBottom">Это свойство позволяет определить все атрибуты нижней рамки
+                HTML элемента за одну декларацию </span></td>
+        </tr>
+        <tr>
+            <td>border-left</td>
+            <td><span id="borderLeft">Это свойство позволяет определить все атрибуты левой рамки
+                HTML элемента за одну декларацию </span></td>
+        </tr>
+        <tr>
+            <td>border-right</td>
+            <td><span id="borderRight">Это свойство позволяет определить все атрибуты правой рамки
+                HTML элемента за одну декларацию </span></td>
+        </tr>
+        <tr>
+            <td>border-top</td>
+            <td><span id="borderTop">Это свойство позволяет определить все атрибуты верхней рамки
+                HTML элемента за одну декларацию </span></td>
+        </tr>
+    </table>
+    <br/> <br/>  <br/> <br/>
+</div>
+</body>
+</html>

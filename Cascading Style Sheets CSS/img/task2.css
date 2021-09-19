@@ -1,0 +1,94 @@
+body {
+            background-color: dimgrey;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        #mainDiv {
+            background-color: aliceblue;
+            border: black 5px double;
+            border-radius: 40px;
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+        #csspicture {
+            text-align: center;
+            border-bottom: 3px purple double;
+        }
+        p, ul {
+            font-family: "Times New Roman", "Arial", "Comic Sans MS";
+            font-size: 20px;
+        }
+        ul {
+            list-style-image: url("type.png");
+        }
+        table {
+            font-family: "Times New Roman", "Arial", "Comic Sans MS";
+            font-size: 15px;
+            border-collapse: collapse;
+            border: 2px solid black;
+            width: 50%;
+        }
+        th, td {
+            text-align: center;
+            border: 1px solid black;
+        }
+        #letterSpacing:hover {
+            letter-spacing: 2px;
+        }
+        #lineHeight:hover {
+            line-height: 30px;
+        }
+        #textDecoration:hover {
+            text-decoration: line-through;
+        }
+        #textTransform:hover {
+            text-transform: uppercase;
+        }
+        #whiteSpace:hover {
+            white-space: pre;
+        }
+        #wordSpacing:hover {
+            word-spacing: 50px;
+        }
+        #fontFamily:hover {
+            font-family: "Comic Sans MS", "Bookman Old Style";
+        }
+        #fontSize:hover {
+            font-size: 25px;
+        }
+        #fontStyle:hover {
+            font-style: italic;
+        }
+        #fontWeight:hover {
+            font-weight: bolder;
+        }
+        #backgroundColor:hover {
+            background-color: chartreuse;
+        }
+        #color:hover {
+            color: indigo;
+        }
+        #backgroundImage:hover {
+            background-image: url("type.png");
+        }
+        #boxShadow:hover {
+            box-shadow: -3px -3px 10px purple;
+        }
+        #opacity:hover {
+            opacity: 0.5;
+        }
+        #textShadow:hover {
+            text-shadow: 3px 3px 10px red;
+        }
+        #borderBottom:hover {
+            border-bottom: 2px solid purple;
+        }
+        #borderLeft:hover {
+            border-left: 5px double green;
+        }
+        #borderRight:hover {
+            border-right: 5px dotted crimson;
+        }
+        #borderTop:hover {
+            border-top: 2px solid chocolate;
+        }
