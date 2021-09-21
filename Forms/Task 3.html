@@ -1,0 +1,66 @@
+<!--
+Сверстайте форму, представленную в материалах урока, с помощью Bootstrap.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <style>
+        body {
+            background-color: lightskyblue;
+        }
+        .card {
+            margin-top: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            border: 10px solid #67a8ca;
+            border-radius: 10px;
+        }
+        .card-header {
+            text-align: center;
+            font-size: 17px;
+            font-weight: bolder;
+        }
+        .btn {
+            margin-left: 20px;
+            border-radius: 30px;
+            border: 1px solid darkgrey;
+            background-color: #e5eff5;
+            color: black;
+            font-weight: bold;
+        }
+        .forgot-font {
+            color: white;
+            font-size: 13px;
+            text-shadow: 1px 1px 0 black;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            Login to Web App
+        </div>
+        <div class="card-body">
+            <form method="post" action="">
+                <div class="form-group">
+                    <input style="margin-top: 10px; outline: 5px solid #f2f5f7" class="form-control" type="text" id="login" name="Login" placeholder="Username or email">
+                    <input style="margin-top: 30px; outline: 5px solid #f2f5f7" class="form-control" type="text" id="pass" name="Password" placeholder="Password">
+                </div>
+                <div clas="form-row">
+                    <input style="margin-top: 20px" type="checkbox" id="remember" name="Remember">
+                    <label for="remember">Remember me on this computer</label>
+                    <input type="submit" class="btn btn-primary" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 10px" class="container">
+        <p class="forgot-font"><b>Forgot your password? </b><a href="https://google.com" style="color: white">Click here to reset it</a></p>
+
+    </div>
+</body>
+</html>

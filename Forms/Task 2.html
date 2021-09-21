@@ -1,0 +1,88 @@
+<!--
+Сверстайте форму, представленную в материалах урока.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 15px;
+        }
+        form {
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px
+        }
+        h4 {
+            width: 100%;
+            text-align: center;
+            border-bottom: solid 2px lightgray;
+            line-height: 0.1rem;
+            margin: 10px 0 20px;
+            color: midnightblue;
+        }
+        h4 span {
+            background:#fff;
+            padding:0 20px;
+        }
+        .labelNormal {
+            margin-top: 10px;
+            float: right;
+        }
+        .labelImportant {
+            margin-top: 10px;
+            font-weight: bold;
+            float: right;
+        }
+        input {
+            margin-top: 10px;
+            margin-left: 20px;
+            width: 170px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <form style="margin-top: 120px">
+        <h4><span style="margin-left: -150px;">Personal information</span></h4>
+        <div style="margin-right: 10%; margin-left: 10%; padding: 10px; height: 120px">
+
+                <input type="text" name="FirstName" id="f_name" />
+                <label for="f_name" class="labelImportant">*First name:</label>
+
+                 <input type="text" name="MiddleName" id="m_name" style=""/>
+                <label for="m_name" class="labelNormal">Middle name:</label>
+
+                <input type="text" name="LestName" id="l_name" />
+                <label for="l_name" class="labelImportant">*Last name:</label>
+        </div>
+    </form>
+    <form>
+        <h4><span style="margin-left: -240px;">Address</span></h4>
+        <div style="margin-right: 10%; margin-left: 10%; padding: 10px; height: 120px">
+
+            <input type="text" name="Address" id="addr" />
+            <label for="addr" class="labelNormal">Adress:</label>
+
+            <input type="text" name="City" id="city" style=""/>
+            <label for="city" class="labelNormal">City or town:</label>
+
+            <select name="State" id="state" style="float: right; margin-top: 10px; width: 180px; margin-left: 20px;">
+                <option disabled selected>Choose a state</option>
+                <option value="Texas">Texas</option>
+                <option value="Arizona">Arizona</option>
+                <option value="New Mexico">New Mexico</option>
+                <option value="California">California</option>
+                <option value="Nevada">Nevada</option>
+            </select>
+            <label for="l_name" class="labelNormal">State:</label>
+
+            <input type="text" name="ZipCode" id="zip" style=""/>
+            <label for="zip" class="labelImportant">*Zip code:</label>
+        </div>
+    </form>
+</body>
+</html>
