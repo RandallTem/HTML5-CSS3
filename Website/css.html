@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html5 & CSS. Введение в HTML5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="resources/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div id="header" class="row" style="min-width: 1200px;">
+        <img src="resources/header_pic.png" usemap="#goHome">
+        <map name="goHome">
+            <area href="introtohtml5.html" shape="poly" coords="4, 33, 45, 0, 95, 33, 95, 66, 45, 95, 4, 66">
+        </map>
+        <nav class="navbar">
+            <div>
+                HTML5 &nbsp;&nbsp;& &nbsp;&nbsp;CSS
+            </div>
+        </nav>
+        <div id="intro-to-html" onclick="location.href='introtohtml5.html'">
+            <img src="resources/introtohtml.png">
+        </div>
+        <div id="img-table-list" style="margin-left: 10px" onclick="location.href='listsandtables.html'">
+            <img src="resources/img-table-list.png">
+        </div>
+        <div id="css3" style="margin-left: 10px" onclick="location.href='css.html'">
+            <img src="resources/css3.png">
+        </div>
+    </div>
+</header>
+<main>
+    <nav id="content-block" style="float:left">
+        <div id="content-block-header">
+            <h3>Содержание главы</h3>
+        </div>
+        <hr/>
+        <div id="content-block-body">
+            <details open>
+                <summary>Каскадные таблицы стилей CSS3</summary>
+                <a href="#style-types" class="ref"><span>Типы стилей<br/></span></a>
+                <a href="#adding-types" class="ref"><span>Способы добавления стилей на страницу<br/></span></a>
+                <a href="#semanticscss" class="ref"><span>Семантика CSS<br/></span></a>
+                <details open>
+                    <summary>Селекторы</summary>
+                    <a style="font-style: italic" href="#selector-element" class="ref"><span>Селектор элемента<br/></span></a>
+                    <a style="font-style: italic" href="#selector-class" class="ref"><span>Селектор класса<br/></span></a>
+                    <a style="font-style: italic" href="#selector-id" class="ref"><span>Селектор идентификатора<br/></span></a>
+                </details>
+                <a href="#fonts" class="ref"><span>Работа со шрифтами<br/></span></a>
+                <a href="#colors" class="ref"><span>Работа с цветом<br/></span></a>
+                <details open>
+                    <summary>Псевдоклассы и псевдоэлементы</summary>
+                    <a style="font-style: italic" href="#pseudo-classes" class="ref"><span>Псевдоклассы<br/></span></a>
+                    <a style="font-style: italic" href="#pseudo-elements" class="ref"><span>Псевдоэлементы<br/></span></a>
+                </details>
+                <a href="#text" class="ref"><span>Работа с текстом<br/></span></a>
+                <a href="#lists" class="ref"><span>Работа со списками<br/></span></a>
+                <a href="#tables" class="ref"><span>Работа с таблицами<br/></span></a>
+            </details>
+        </div>
+    </nav>
+    <article class="content-main">
+        <h2 style="margin-bottom: 20px">3. Каскадные таблицы стилей CSS3</h2>
+        <p>
+            <b>CSS (Cascading Style Sheets)</b> - каскадные таблицы стилей, используются для описания
+            внешнего вида документа, написанного языком разметки.
+        </p>
+        <p>
+            Каскадные таблицы стилей описывают правила форматирования элементов с помощью свойств
+            и допустимых для них значений. Для каждого элемента можно использовать ограниченный
+            набор свойств, остальные не будут оказывать на него никакого влияния.
+        </p>
+        <p>Преимущества примения стилей:</p>
+        <p>1. Разграничение кода и оформления</p>
+        <p>2. Разное оформление для разных устройств</p>
+        <p>3. Расширенные способы форматирования</p>
+        <p>4. Ускорение загрузки сайта</p>
+        <p>5. Единое стилевое оформление множества документов</p>
+        <p>6. Централизованное хранение</p>
+
+        <h4 style="margin-top: 40px"><a name="style-types">Типы стилей</a></h4>
+
+        <p>Стили представляют набор параметров, управляющих видом и положением элементов веб-страницы.</p>
+        <p>Существует несколько типов стилей:</p>
+        <p>- Стиль браузера - оформление, которое по умолчанию применяется к элементам веб-страницы браузером. </p>
+        <p>- Стиль автора - стиль, который добавляет к документу его разработчик.</p>
+        <p>
+            - Стиль пользователя - стиль, который может включить пользователь сайта через настройки браузера.
+            Такой стиль имеет более высокий приоритет и переопределяет исходное оформление документа.
+        </p>
+
+        <h4 style="margin-top: 40px"><a name="adding-types">Способы добавления стилей на страницу</a></h4>
+
+        <p>1. Inline или внутренние стили подключаются с использованием атрибута style.</p>
+        <textarea readonly class="code-block" style="height: 40px">
+&lt;p style="..."&gt;Some text&lt;p&gt;
+        </textarea>
+
+        <p>2. Глобальные стили устанавливаются тегом <b>&lt;style&gt;</b>, который должен быть размещен в теге <b>&lt;head&gt;</b>.</p>
+        <textarea readonly class="code-block" style="height: 150px">
+&lt;head&gt;
+    &lt;style&gt;
+    ... ...
+    &lt;/style&gt;
+&lt;/head&gt;
+        </textarea>
+
+        <p>
+            3. Тегом <b>&lt;link&gt;</b> в атрибуте href задается путь к файлу со стилями. Файл должен иметь расширение .css.
+            Тег <b>&lt;link&gt;</b> должен быть размещен в теге <b>&lt;head&gt;</b>.
+        </p>
+        <textarea readonly class="code-block" style="height: 40px">
+&lt;link href="url" rel="stylesheet" /&gt;
+        </textarea>
+
+        <h4 style="margin-top: 40px"><a name="semanticscss">Семантика CSS</a></h4>
+
+        <p>Для inline стилей используется следующий формат записи css стилей:</p>
+        <textarea readonly class="code-block" style="height: 40px">
+&lt;p style="свойство:значение; свойство:значение"&gt;Some text&lt;/p&gt;
+        </textarea>
+
+        <p>В теге <b>&lt;style&gt;</b> и во внешних стилях используется следующий синтаксис:</p>
+        <textarea readonly class="code-block" style="height: 150px">
+селектор
+{
+    свойство:значение;
+    свойство:значение;
+    свойство:значение;
+    ...
+}
+        </textarea>
+
+        <h3 style="margin-bottom: 20px; margin-top: 20px">Селекторы</h3>
+        <h4 style="margin-top: 20px"><a name="selector-element">Селектор элемента</a></h4>
+        <p>
+            Если в качестве селектора выступает имя элемента (тега), то в этом случае все элементы
+            данного тега будут соответствовать заданным стилям. Если внутри этих тегов будут
+            находиться текстовые элементы, они будут наследовать определенные правила.
+        </p>
+        <textarea readonly class="code-block" style="height: 150px">
+p {
+    font-family: Arial;
+    font-size: 18px;
+    color: green;
+}
+        </textarea>
+
+        <h4 style="margin-top: 20px"><a name="selector-class">Селектор класса</a></h4>
+        <p>
+            Если необходимо задать стили для индивидуального элемента или задать разные стили для одного тега,
+            следует использовать селектор класса. Имена классов должны начинаться с латинского символа и
+            могут содержать в себе символ дефиса и подчеркивания.
+        </p>
+        <p>
+            Чтобы привязать к элементу класс, необходимо в открывающем теге
+            задать атрибут class и присвоить ему имя класса, описанного в стилях.
+        </p>
+        <textarea readonly class="code-block" style="height: 150px">
+.testClass {
+    font-family: Arial;
+    font-size: 18px;
+    color: green;
+}
+
+&lt;p class="testClass"&gt;Content&lt;p&gt;
+        </textarea>
+
+        <h4 style="margin-top: 20px"><a name="selector-id">Селектор идентификатора</a></h4>
+
+        <p>
+            Идентификатор - особый вид селектора, которым помечается один элемент на странице.
+            Чтобы указать селектор идентификатора, в CSS необходимо использовать конструкцию #имя_идентификатора.
+        </p>
+        <p>
+            Чтобы привязать к элементу идентификатор, необходимо в открывающем теге
+            задать атрибут id и присвоить ему имя идентификатора, описанного в стилях.
+        </p>
+        <textarea readonly class="code-block" style="height: 150px">
+#id1 {
+    font-family: Arial;
+    font-size: 18px;
+    color: green;
+}
+
+&lt;p id="id1"&gt;Content&lt;p&gt;
+        </textarea>
+
+        <h4 style="margin-top: 20px"><a name="fonts">Работа со шрифтами</a></h4>
+
+        <p><b>Font</b> - универсальное свойства, которое позволяет устанавливать одновременно несколько характеристик шрифта.</p>
+        <p><b>Font-Family</b> - устанавливает семейства шрифта для оформления текста содержимого.</p>
+        <p><b>Font-size</b> - определяет размер шрифта элемента.</p>
+        <p><b>Font-stretch</b> - устанавливает узкое, нормальное или широкое начертание шрифта.</p>
+        <p><b>Font-style</b> - задает начертание шрифта.</p>
+        <p><b>Font-variant</b> - определяет как представлять строчные буквы.</p>
+        <p><b>Font-weight</b> - устанавливает насыщенность шрифта.</p>
+
+        <textarea readonly class="code-block" style="height: 150px">
+&lt;p style="font-family: 'Comic Sans MS'; font-size: 23px; font-stretch: expanded;
+font-style: italic; font-weight: bold;"&gt;
+Мороз и солнце; день чудесный!      &lt;br /&gt;
+Еще ты дремлешь, друг прелестный –  &lt;br /&gt;
+Пора, красавица, проснись;          &lt;br /&gt;
+Открой сомкнуты негой взоры         &lt;br /&gt;
+&lt;/p&gt;
+        </textarea>
+        <div class="example" style="height: 200px; width: 400px">
+            <p style="font-family: 'Comic Sans MS'; font-size: 23px; font-stretch: expanded;
+                font-style: italic; font-weight: bold;">
+                Мороз и солнце; день чудесный!      <br />
+                Еще ты дремлешь, друг прелестный –  <br />
+                Пора, красавица, проснись;          <br />
+                Открой сомкнуты негой взоры         <br />
+            </p>
+        </div>
+
+        <h4 style="margin-top: 20px"><a name="colors">Работа с цветом</a></h4>
+
+        <p>
+            <b>Background-color</b> - позволяет задать элементу фоновый цвет. Цвет можно задавать
+            несколькими способами:<br/>
+            - шестнадцатеричным значением<br/>
+            - функцией RGB(red, green, blue)<br/>
+            - функцией hsla(hue, saturation, lightness, opacity).
+        </p>
+        <p><b>Background-image</b> позволяет задать фоновое изображение для элемента. </p>
+        <p>
+            <b>Border</b> позволяет установить границу вокруг элемента.
+            Значение следует задавать в следующем порядке:<br/>
+            - border-width - толщина границы.<br/>
+            - border-style - стиль линии.<br/>
+            &nbsp;&nbsp;&nbsp;- &nbspdotted - точки<br/>
+            &nbsp;&nbsp;&nbsp;- dashed - пунктир<br/>
+            &nbsp;&nbsp;&nbsp;- solid - сплошная<br/>
+            &nbsp;&nbsp;&nbsp;- double - двойная<br/>
+            &nbsp;&nbsp;&nbsp;- groove - втиснутая<br/>
+            &nbsp;&nbsp;&nbsp;- ridge - выпуклая<br/>
+            &nbsp;&nbsp;&nbsp;- inset - внутрь<br/>
+            &nbsp;&nbsp;&nbsp;- outset - наружу<br/>
+            - border-color - цвет линии.
+        </p>
+        <p>
+            <b>Outline</b> - позволяет установить внешнюю границу элемента на
+            всех четырех сторонах одновременно. В отличие от рамки, контур
+            размещен поверх блока элемента и не влияет на размер, но может
+            перекрывать внешний отступ.
+        </p>
+        <textarea readonly class="code-block" style="height: 150px">
+&lt;p style="background-color: cadetblue; border: 8px dashed crimson; outline: greenyellow"&gt;
+    Мороз и солнце; день чудесный!      &lt;br /&gt;
+    Еще ты дремлешь, друг прелестный –  &lt;br /&gt;
+    Пора, красавица, проснись;          &lt;br /&gt;
+    Открой сомкнуты негой взоры         &lt;br /&gt;
+&lt;/p&gt;
+        </textarea>
+        <div class="example" style="height: 200px; width: 400px">
+            <p style="background-color: cadetblue; border: 8px dashed crimson; outline: greenyellow">
+                Мороз и солнце; день чудесный!      <br />
+                Еще ты дремлешь, друг прелестный –  <br />
+                Пора, красавица, проснись;          <br />
+                Открой сомкнуты негой взоры         <br />
+            </p>
+        </div>
+
+        <h3 style="margin-bottom: 20px; margin-top: 40px">Псевдоклассы и псевдоэлементы</h3>
+
+        <p>
+            <b>Псевдоэлементы</b> - элементы CSS стилей, который позволяют задать стиль элементов, не определенных в дереве элементов документа,
+            а также генерировать содержимое, которого нет в исходном коде текста.
+        </p>
+        <p>
+            <b>Псевдоклассы</b> - элементы CSS стилей, которые определяют динамическое состояние элементов,
+            которое изменяется при взаимодействии пользователя со страницей.
+        </p>
+
+        <h4 style="margin-top: 20px"><a name="pseudo-classes">Псевдоклассы</a></h4>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">:link, :visited, :hover, :active</h5></p>
+        <p>:link - задает стили для не посещенной ссылки. </p>
+        <p>:visited - задает стили для ссылки, по которой уже выполнялся переход.</p>
+        <p>:hover - задает стили для элемента, когда на него наводят курсор. Действует не только для ссылок.</p>
+        <p>:active - задает стили для ссылки на которой удерживается нажатый курсор. </p>
+        <textarea readonly class="code-block" style="height: 150px">
+#demonstration-link-visited-hover:hover {
+    font-size: 30px;
+    color:indigo;
+    background-color: aqua;
+}
+#demonstration-link-visited-hover:active {
+    font-size: 50px;
+    color:brown;
+    background-color: red;
+}
+#demonstration-link-active-hover:link {
+    font-style: italic;
+    font-family: "Comic Sans MS";
+}
+        </textarea>
+        <div class="example" style="height: 100px; width: 200px">
+            <a id="demonstration-link-active-hover" href="#">Ссылка</a>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">:empty</h5></p>
+
+        <p>:empty находит пустые элементы и применяет к ним стили</p>
+        <textarea readonly class="code-block" style="height: 150px">
+#demonstration-empty :empty {
+    background-color: blueviolet;
+}
+        </textarea>
+        <div class="example" style="height: 100px; width: 200px">
+            <table id="demonstration-empty" style="width: 150px; height: 100px">
+                <tr>
+                    <td>1</td>
+                    <td></td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">:first-child и :last-child</h5></p>
+
+        <p>
+            :first-child устанавливает стилевое оформление к первому дочернему элементу своего родителя
+        </p>
+        <p>
+            :last-child устанавливает стилевое оформление к последнему дочернему элементу своего родителя.
+        </p>
+        <textarea readonly class="code-block" style="height: 150px">
+#demonstration-children p:first-child {
+    color: brown;
+}
+#demonstration-children p:last-child {
+    color: chartreuse;
+}
+        </textarea>
+        <div class="example" style="height: 150px; width: 200px">
+            <div id="demonstration-children">
+                <p>First child</p>
+                <p>Middle child</p>
+                <p>Last child</p>
+            </div>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">:not</h5></p>
+
+        <p>:not позволяет задать стили для элементов, которые не содержат указанный селектор.</p>
+        <textarea readonly class="code-block" style="height: 150px">
+#demonstration-not:not(h6) {
+    color: crimson;
+}
+        </textarea>
+        <div class="example" style="height: 70px; width: 400px">
+            <p id="demonstration-not">Этот текст находится в параграфе,<h6> а этот в теге h6</h6></p>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">:only-child</h5></p>
+
+        <p>:only-child - правило для параграфов, которые являются единственным дочерним элементом</p>
+        <textarea readonly class="code-block" style="height: 100px">
+#demonstration-only-child p:only-child {
+    background-color: chocolate;
+}
+        </textarea>
+        <div id="demonstration-only-child" class="example" style="height: 150px; width: 200px">
+            <div>
+                <p>Первый дочерний элемент первого div</p>
+                <p>Второй дочерний элемент первого div</p>
+            </div>
+            <div>
+                <p>Первый дочерний элемент второго div</p>
+            </div>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">:only-of-type</h5></p>
+
+        <p>:only-of-type применяется к дочернему элементу указанного типа, только если он единственный у родителя</p>
+        <textarea readonly class="code-block" style="height: 100px">
+#demonstration-only-of-type p:only-of-type{
+    background-color: cornflowerblue;
+}
+        </textarea>
+        <div id="demonstration-only-of-type" class="example" style="height: 150px; width: 200px">
+            <div>
+                <p>Первый дочерний элемент первого div</p>
+                <p>Второй дочерний элемент первого div</p>
+            </div>
+            <div>
+                <p>Единственный дочерний элемент второго div</p>
+            </div>
+        </div>
+
+        <h4 style="margin-top: 20px"><a name="pseudo-elements">Псевдоэлементы</a></h4>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">::after</h5></p>
+
+        <p>::after позволяет динамически генерировать контент и вставлять после содержимого элемента</p>
+
+        <textarea readonly class="code-block" style="height: 100px">
+#demonstration-after::after {
+    content: '- Дополнение';
+}
+        </textarea>
+        <div class="example" style="height: 50px; width: 300px">
+            <p id="demonstration-after">Оригинальный текст</p>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">::before</h5></p>
+
+        <p>::after позволяет динамически генерировать контент и вставлять перед содержимым элемента</p>
+
+        <textarea readonly class="code-block" style="height: 100px">
+#demonstration-before::before {
+    content: 'Дополнение -';
+}
+        </textarea>
+        <div class="example" style="height: 50px; width: 300px">
+            <p id="demonstration-before">Оригинальный текст</p>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">::first-letter</h5></p>
+
+        <p>::first-letter позволяет задать стиль первого символа в тексте элемента.</p>
+
+        <textarea readonly class="code-block" style="height: 100px">
+#demonstration-first-letter::first-letter {
+    color: crimson;
+    font-size: large;
+}
+        </textarea>
+        <div class="example" style="height: 50px; width: 300px">
+            <p id="demonstration-first-letter">Текст в параграфе</p>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">::selection</h5></p>
+
+        <p>
+            ::selection позволяет задать стили к выделенному пользователем тексту.
+            Допускается использовать следующие свойства: color, background и background-color.
+        </p>
+
+        <textarea readonly class="code-block" style="height: 100px">
+#demonstration-selection::selection {
+    color: chartreuse;
+    background-color: darkblue;
+}
+        </textarea>
+        <div class="example" style="height: 50px; width: 300px">
+            <p id="demonstration-selection">Текст в параграфе</p>
+        </div>
+
+        <h4 style="margin-top: 20px"><a name="text">Работа с текстом</a></h4>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">Выравнивание текста</h5></p>
+
+        <p>Свойство <b>text-align</b> определяет горизонтальное выравнивание текста внутри элемента.<br/>
+            Имеет следующие значения:<br/>
+            - center - вырвнивание текста по центру.<br/>
+            - justify - выравнивание по ширине.<br/>
+            - left - по левому краю.<br/>
+            - right - по правому краю.<br/>
+            - start - аналогично left, если текст идет слева на право, или right, когда тект идет справа на лево. CSS3.<br/>
+            - end - такое же как start, только наоборот. CSS3.
+        </p>
+        <textarea readonly class="code-block" style="height: 100px">
+&lt;div style="text-align: center"&gt;
+    &lt;p&gt;Текст в параграфе&lt;/p&gt;
+&lt;/div&gt;
+        </textarea>
+        <div class="example" style="height: 50px; width: 300px">
+            <div style="text-align: center">
+                <p>Текст в параграфе</p>
+            </div>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">Оформления текста </h5></p>
+
+        <p>
+            Свойство <b>text-decoration</b> позволяет задать оформление тексту. Имеет следующие значения:<br/>
+            - line-through - перечеркнутый текст.<br/>
+            - overline - линия над текстом.<br/>
+            - underline - подчеркивание.<br/>
+            - none - отменяет все эфекты, в том числе подчеркивание у ссылок.
+        </p>
+        <textarea readonly class="code-block" style="height: 100px">
+&lt;div style="text-decoration: line-through"&gt;
+    &lt;p&gt;Текст в параграфе&lt;/p&gt;
+&lt;/div&gt;
+        </textarea>
+        <div class="example" style="height: 50px; width: 300px">
+            <div style="text-decoration: line-through">
+                <p>Текст в параграфе</p>
+            </div>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">Свойства text-overflow, overflow и white-space</h5></p>
+
+        <p>
+            Свойство <b>text-overflow</b> определяет видимость текста в блоке,
+            если текст целиком не помещается в заданную область. CSS3.
+            Работает только в том случае, если задано свойство overflow. Имеет следующие значения:<br/>
+            - clip - текст обрезается по размеру области.<br/>
+            - ellipsis - текст обрезается и к концу строки добавляется многоточие.
+        </p>
+        <p>
+            Свойство <b>overflow</b> задает отображение содержимому блочного элемента, если оно целиком не помещается и выходит за область заданных размеров.
+            Имеет следующие значения:<br/>
+            - visible - отображает все содержимое, даже за пределами области.<br/>
+            - hidden - отображается только то содержимое, которое не выходит за пределы области.<br/>
+            - scroll - добавляются полосы прокрутки.<br/>
+            - auto - полосы прокрутки добавляются только при необходимости.
+        </p>
+        <p>
+            Свойство <b>white-space</b> устанавливает отображение пробелов между словами.
+            Имеет следующие значения:<br/>
+            - normal - тест выводится обычным образом, переносы строк устанавливаются автоматически.<br/>
+            - nowrap - пробелы не учитываются, переносы строк игнорируются, и весь текст отображается в одной строке.<br/>
+            - pre - текст отображется с учетом всех пробелов и переносов.<br/>
+            - pre-line - пробелы не учитываются, текст автоматически переносится на новую строку, если не помещается в заданную область.<br/>
+            - pre-wrap - пробелы и переносы в тексте сохранются, но если строка не помещается в заданную область, то текст автоматически переносится на следующую строку.
+        </p>
+        <textarea readonly class="code-block" style="height: 100px">
+&lt;div style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden"&gt;
+    &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit modi neque tenetur voluptas! Ab aliquam
+        aliquid dolor eveniet, id labore nulla ratione sunt suscipit ullam vitae voluptas voluptatibus. Fugit, nihil.
+    &lt;/p&gt;
+&lt;/div&gt;
+        </textarea>
+        <div class="example" style="height: 100px; width: 300px">
+            <div style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit modi neque tenetur voluptas! Ab aliquam
+                    aliquid dolor eveniet, id labore nulla ratione sunt suscipit ullam vitae voluptas voluptatibus. Fugit, nihil.
+                </p>
+            </div>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">Тень для текста</h5></p>
+        <p>
+            Свойство <b>text-shadow</b> позволяет задать тень для текста.<br/> Имеет следующие параметры:
+            text-shadow: &lt;сдвиг по х&gt; &lt;сдвиг по у&gt; &lt;размытие&gt; &lt;цвет&gt;
+        </p>
+        <textarea readonly class="code-block" style="height: 100px">
+&lt;p style="text-shadow: 5px 5px 1px green"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit modi neque tenetur voluptas! Ab aliquam
+    aliquid dolor eveniet, id labore nulla ratione sunt suscipit ullam vitae voluptas voluptatibus. Fugit, nihil.
+&lt;/p&gt;
+        </textarea>
+        <div class="example" style="height: 100px; width: 300px">
+            <p style="text-shadow: 5px 5px 1px green">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit modi neque tenetur voluptas! Ab aliquam
+                aliquid dolor eveniet, id labore nulla ratione sunt suscipit ullam vitae voluptas voluptatibus. Fugit, nihil.
+            </p>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">Интервал между словами</h5></p>
+        <p>
+            Свойство <b>word-spacing</b> позволяет задать интервал между словами
+        </p>
+        <textarea readonly class="code-block" style="height: 100px">
+&lt;p style="word-spacing: 20px"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit modi neque tenetur voluptas! Ab aliquam
+    aliquid dolor eveniet, id labore nulla ratione sunt suscipit ullam vitae voluptas voluptatibus. Fugit, nihil.
+&lt;/p&gt;
+        </textarea>
+        <div class="example" style="height: 100px; width: 300px">
+            <p style="word-spacing: 20px">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit modi neque tenetur voluptas! Ab aliquam
+                aliquid dolor eveniet, id labore nulla ratione sunt suscipit ullam vitae voluptas voluptatibus. Fugit, nihil.
+            </p>
+        </div>
+
+        <h4 style="margin-top: 20px"><a name="lists">Работа со списками</a></h4>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">Задание вида маркера</h5></p>
+
+        <p>
+            Свойство <b>list-style-type</b> позволяет задать вид маркера.
+            Маркированный список: <br/>
+            - circle - маркер в виде кружка.<br/>
+            - disc   - маркер в виде точки.<br/>
+            - square - маркер в виде квадрата.
+
+        </p>
+        <textarea readonly class="code-block" style="height: 100px">
+&lt;ul style="list-style-type: square"&gt;
+    &lt;li&gt;Запись 1&lt;/li&gt;
+    &lt;li&gt;Запись 2&lt;/li&gt;
+    &lt;li&gt;Запись 3&lt;/li&gt;
+&lt;/ul&gt;
+        </textarea>
+        <div class="example" style="height: 100px; width: 300px">
+            <ul style="list-style-type: square">
+                <li>Запись 1</li>
+                <li>Запись 2</li>
+                <li>Запись 3</li>
+            </ul>
+        </div>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">Размещение маркера относительно текста</h5></p>
+
+        <p>
+            Свойсто <b>list-style-position</b> определяет, как будет размещаться маркер относительно текста.
+            Допустимо два значения: <br/>
+            - outside — маркер вынесен за границу элемента списка.<br/>
+            - inside — маркер обтекается текстом.
+        </p>
+        <textarea readonly class="code-block" style="height: 100px">
+&lt;ul style="list-style-position: inside"&gt;
+    &lt;li&gt;Запись 1&lt;/li&gt;
+    &lt;li&gt;Запись 2&lt;/li&gt;
+    &lt;li&gt;Запись 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul style="list-style-position: outside"&gt;
+    &lt;li&gt;Запись 1&lt;/li&gt;
+    &lt;li&gt;Запись 2&lt;/li&gt;
+    &lt;li&gt;Запись 3&lt;/li&gt;
+&lt;/ul&gt;
+        </textarea>
+        <div class="example" style="height: 200px; width: 300px">
+            <ul style="list-style-position: inside">
+                <li>Запись 1</li>
+                <li>Запись 2</li>
+                <li>Запись 3</li>
+            </ul>
+            <ul style="list-style-position: outside">
+                <li>Запись 1</li>
+                <li>Запись 2</li>
+                <li>Запись 3</li>
+            </ul>
+        </div>
+
+        <h4 style="margin-top: 20px"><a name="tables">Работа с таблицами</a></h4>
+
+        <p><h5 style="font-weight: bold; text-decoration: underline">Свойства border, bolder-collapse, border-spacing, empty-cells</h5></p>
+
+        <p>Свойством <b>border</b> можно задать границы таблице.</p>
+        <p>
+            Свойство <b>border-collapse</b> пощволяет задать отображение границы вокруг ячеек таблицы.
+            Имеет несколько значений:<br/>
+            - collapse - рамки ячеек сливаются в одну, а промежутки между рамками убираются.<br/>
+            - separate - рамки ячеек располагаются отдельно.
+        </p>
+        <p>
+            Свойство <b>border-spacing</b> позволяет задать отступы между ячейками и рамкой таблицы.
+            Если задано одно значение - отступы со всех сторон одинаковые, если два значения,
+            то первое задает расстояние по горизонтали, второе - по вертикали.
+        </p>
+        <p>
+            Свойство <b>empty-cells</b> позволяет задать параметры отображения пустых ячеек.
+            Имеет два значения: <br/>
+            - show - рамка и фон отображаются.<br/>
+            - hide - скрывает ячейку, задавая ей свойство display: none.
+        </p>
+        <textarea readonly class="code-block" style="height: 100px">
+#table-demonstration table {
+    border: 3px solid black;
+    width: 400px;
+    border-collapse: separate;
+    border-spacing: 5px;
+    empty-cells: hide;
+}
+#table-demonstration-table th{
+    padding: 5px;
+    border: 3px solid black;
+}
+        </textarea>
+        <div id="table-demonstration" class="example" style="height: 200px; width: 500px">
+            <table id="table-demonstration-table">
+               <tr>
+                   <th>Company</th>
+                   <th>Q1</th>
+                   <th>Q2</th>
+                   <th>Q3</th>
+                   <th>Q4</th>
+               </tr>
+                <tr>
+                    <td>Microsoft</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td>23</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>50</td>
+                    <td>40</td>
+                    <td>45</td>
+                    <td>39</td>
+                </tr>
+                <tr>
+                    <td>Apple</td>
+                    <td>25</td>
+                    <td>30</td>
+                    <td>33</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td>IBM</td>
+                    <td>20</td>
+                    <td>15</td>
+                    <td></td>
+                    <td>29</td>
+                </tr>
+            </table>
+        </div>
+
+    </article>
+</main>
+</body>
+</html>

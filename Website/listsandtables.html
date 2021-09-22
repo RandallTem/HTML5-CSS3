@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html5 & CSS. Введение в HTML5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="resources/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="header" class="row" style="min-width: 1200px;">
+            <img src="resources/header_pic.png" usemap="#goHome">
+            <map name="goHome">
+                <area href="introtohtml5.html" shape="poly" coords="4, 33, 45, 0, 95, 33, 95, 66, 45, 95, 4, 66">
+            </map>
+            <nav class="navbar">
+                <div>
+                    HTML5 &nbsp;&nbsp;& &nbsp;&nbsp;CSS
+                </div>
+            </nav>
+            <div id="intro-to-html" onclick="location.href='introtohtml5.html'">
+                <img src="resources/introtohtml.png">
+            </div>
+            <div id="img-table-list" style="margin-left: 10px" onclick="location.href='listsandtables.html'">
+                <img src="resources/img-table-list.png">
+            </div>
+            <div id="css3" style="margin-left: 10px" onclick="location.href='css.html'">
+                <img src="resources/css3.png">
+            </div>
+        </div>
+    </header>
+    <main>
+            <nav id="content-block" style="float:left">
+                <div id="content-block-header">
+                    <h3>Содержание главы</h3>
+                </div>
+                <hr/>
+                <div id="content-block-body">
+                    <details open>
+                        <summary>Работа с изображениями, таблицами и списками</summary>
+                        <details open>
+                            <summary style="font-size: 20px">Изображения</summary>
+                            <a href="#addimg" class="ref"><span>Добавление изображения на страницу<br/></span></a>
+                            <a href="#imgsizes" class="ref"><span>Размеры изображений<br/></span></a>
+                            <a href="#imgmap" class="ref"><span>Карта изображения<br/></span></a>
+                        </details>
+                        <details open>
+                            <summary style="font-size: 20px">Таблицы</summary>
+                            <a href="#linesandcells" class="ref"><span>Строки и ячейки<br/></span></a>
+                            <a href="#tablename" class="ref"><span>Название таблицы<br/></span></a>
+                            <a href="#spacing-padding" class="ref"><span>Cellspacing и Cellpadding<br/></span></a>
+                            <a href="#col-row" class="ref"><span>Colspan и Rowspan<br/></span></a>
+                        </details>
+                        <details open>
+                            <summary style="font-size: 20px">Списки</summary>
+                            <a href="#markedlist" class="ref"><span>Маркированный список<br/></span></a>
+                            <a href="#numberedlist" class="ref"><span>Нумерованный список<br/></span></a>
+                            <a href="#deflist" class="ref"><span>Список определений<br/></span></a>
+                        </details>
+                    </details>
+                </div>
+            </nav>
+            <article class="content-main">
+                <h2 style="margin-bottom: 20px">2. Работа с изображениями, таблицами и списками</h2>
+                <h3 style="margin-bottom: 20px">Изображения</h3>
+                <p>
+                    Тег <b>&lt;img&gt;</b> предназначен для отображения изображения на веб-странице.
+                    Тег не имеет текстового содержимого, поэтому является самодостаточным. В связи с этим отсутствует
+                    закрывающий тег, и в конце открывающего тега находится символ /.
+                </p>
+                <p>Элемент имеет следующие атрибуты:</p>
+                <p><b>src</b> - содержит адрес графического файла</p>
+                <p>
+                    <b>alt</b> - устанавливает альтернативный текст для изображения (будет выведено,
+                    если изображение не найдено)
+                </p>
+                <p>
+                    <b>title</b> - устанавливает текст всплывающей подсказке
+                    (надпись вылезет, если навести курсор на изображение)
+                </p>
+                <p><b>width, height</b> - атрибуты задают ширину и высоту изображения</p>
+                <p>
+                    <b>usemap</b> - связывает между собой картинку и карту-изображение, задаваемую с помощью контейнера &lt;map&gt;
+                </p>
+                <p>Допустимые форматы изображения: JPEG, GIF, PNG, SVG, ICO.</p>
+
+                <h4 style="margin-top: 40px"><a name="addimg">Добавление изображения на страницу</a></h4>
+
+                <p>Изображение добавляется с помощью тега <b>&lt;img&gt;</b></p>
+                <textarea readonly class="code-block" style="height: 150px">
+<!-- Картинка с локального компьютера -->
+&lt;img src="resources/examples/localpic.jpg" alt="Laptop" title="Laptop" /&gt; &lt;br /&gt;
+
+<!-- Картинка с удаленного ресурса -->
+&lt;img src="https://img-fotki.yandex.ru/get/4409/28257045.573/0_6d096_6c2b5128_orig.jpg" alt="Rzhuman"  /> <br />
+
+<!-- Удаленная картинка -->
+&lt;img src="resources/thispicdoesnotexist.png" alt="Laptop" title="Picture should be here" /&gt; &lt;br /&gt;
+
+<!-- Анимация -->
+&lt;img src="resources/examples/gif.gif" /&gt; &lt;br /&gt;
+                </textarea>
+                <div class="example" style="height: 300px; width: 600px">
+                    <img src="resources/examples/localpic.jpg" width="150px" alt="Laptop" title="Laptop" /> <br />
+                    <img src="https://img-fotki.yandex.ru/get/4409/28257045.573/0_6d096_6c2b5128_orig.jpg" width="200px" alt="Rzhuman"  /> <br />
+                    <img src="resources/thispicdoesnotexist.png" alt="Picture should be here" /> <br />
+                    <img src="resources/examples/gif.gif" width="150px"/> <br />
+                </div>
+
+                <h4 style="margin-top: 40px"><a name="imgsizes">Размеры изображений</a></h4>
+
+                <p>
+                    При вставке изображения на страницу оно имеет оригинальный размер. Но используя атрибуты width
+                    и height можно регулировать высоту и ширину изображения.
+                </p>
+                <p>
+                    Размеры изображения можно задавать как в процентах, так и в пикселях. Если размер задан
+                    в процентах, то размеры изображения будут вычисляться относительно родительского элемента,
+                    или от окна браузера в случае отсутствия родительского элемента.
+                </p>
+                <p>Если задать только один параметр размера изображения, то второй изменится пропорционально.</p>
+
+                <textarea readonly class="code-block" style="height: 50px">
+&lt;img src="resources/examples/hmmm.png" width="100" height="200" /&gt;
+                </textarea>
+                <div class="example" style="height: 200px; width: 200px">
+                    <img src="resources/examples/hmmm.png" width="100" height="200" />
+                </div>
+
+                <h4 style="margin-top: 40px"><a name="imgmap">Карта изображения</a></h4>
+
+                <p>
+                    Для представления графического изображения в виде карты с активными областями служит тег <b>&lt;map&gt;</b>.
+                    Активную область можно определить по изменению вида курсора. Щелкая мышью на активных областях,
+                    можно переходить на разные адреса. Связывание изображения с описанными областями происходит с помощью
+                    атрибута usemap у изображения и атрибута name у карты областей.
+                </p>
+                <p>
+                    Тег <b>&lt;map>&lt;/map&gt;</b> содержит области, описанные тегом <b>&lt;area /&gt;</b>, который имеет следующие атрибуты:
+                </p>
+                <p>- alt - альтернативный текст для области изображения</p>
+                <p>- cords - координаты активной области</p>
+                <p>- href - адрес документа, на который ведет ссылка</p>
+                <p>- hreflang - язык документа, на который ведет ссылка (HTML5)</p>
+                <p>- shape - форма области</p>
+                <p>- target - имя окна или фрейма, куда браузер будет загружать документ</p>
+                <p>- type - устанавливает MIME-тип документа, на который ведет ссылка</p> <br/>
+                <p>Атрибут shape может принимать значения:</p>
+                <p>- Rect - прямоугольная область. Чтобы задать, необходимо передать координаты двух вершин, лежащих на одной диагонали.</p>
+                <p>- Circle - круглая область. Чтобы задать, надо передать координаты центра и радиус окружности.</p>
+                <p>- Poly - многоуольная область. Чтобы задать, надо передать все точки, из которых состоит фигура. Последняя точка соединяется с первой.</p>
+
+                <textarea readonly class="code-block" style="height: 150px">
+&lt;img src="resources/examples/image_map.jpg" width="350" usemap="#testMap" /&gt;
+&lt;map name="testMap"&gt;
+    &lt;area href="#" shape="rect" coords="14, 13, 99, 90" title="Rectangle" alt="Rectangle" /&gt;
+    &lt;area href="#" shape="circle" coords="268, 55, 39" title="Circle" alt="Circle" /&gt;
+    &lt;area href="#" shape="poly" coords="186, 103, 215, 140, 188, 189, 145, 165, 144, 118" title="Poly" alt="Poly" /&gt;
+&lt;/map>
+                </textarea>
+                <div class="example" style="height: 250px; width: 400px; margin-bottom: 50px">
+                    <img src="resources/examples/image_map.jpg" width="350" usemap="#testMap" />
+                    <map name="testMap">
+                        <area href="#" shape="rect" coords="14, 13, 99, 90" title="Rectangle" alt="Rectangle" />
+                        <area href="#" shape="circle" coords="268, 55, 39" title="Circle" alt="Circle" />
+                        <area href="#" shape="poly" coords="186, 103, 215, 140, 188, 189, 145, 165, 144, 118" title="Poly" alt="Poly" />
+                    </map>
+                </div>
+
+                <h3 style="margin-bottom: 20px">Таблицы</h3>
+
+                <p>
+                    Тег <b>&lt;table&gt;&lt;/table&gt;</b> является основным контейнером для элементов таблицы, и все теги, относящиеся
+                    к таблице, должны располагаться в нем.
+                </p>
+                <p>
+                    <b>&lt;thead&gt;&lt;/thead&gt;</b> - предназначен для хранения одной или нескольких строк, которые представлены вверху таблицы.
+                </p>
+                <p>
+                    <b>&lt;tbody&gt;&lt;/tbody&gt;</b> - предназначен для хранения содержимого таблицы. Позволяет создавать структурные
+                    блоки и управлять их оформлением с помощью стилей.
+                </p>
+                <p>
+                    <b>&lt;tfoot&gt;&lt;/tfoot&gt;</b> - предназначен для хранения информации, которая будет отображена внизу таблицы.
+                    В коде должен быть определен до тела таблицы, хотя отображается внизу.
+                </p>
+                <textarea readonly class="code-block" style="height: 150px">
+&lt;table&gt;
+    &lt;thead&gt;
+    ... ...
+    &lt;/head&gt;
+
+    &lt;tfoot&gt;
+    ... ...
+    &lt;/tfoot&gt;
+
+    &lt;tbody&gt;
+    ... ...
+    &lt;/tbody&gt;
+&lt;/table&gt;
+                </textarea>
+
+                <h4 style="margin-top: 40px"><a name="linesandcells">Строки и ячейки</a></h4>
+
+                <p>
+                    Таблица содержит строки, представленные тегом <tr></tr>, которые, в свою очередь, содержат ячейки, представленные
+                    тегом <b>&lt;td&gt;&lt;/td&gt;</b> или <b>&lt;th&gt;&lt;/th&gt;</b>, если используются заглавные ячейки.
+                </p>
+
+                <textarea readonly class="code-block" style="height: 250px">
+&lt;table border="1"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+    &lt;th&gt;Номер&lt;/th&gt;
+    &lt;th&gt;Имя продукта&lt;/th&gt;
+    &lt;th&gt;Цена&lt;/th&gt;
+    &lt;th&gt;Количество&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+    &lt;td&gt;1.&lt;/td&gt;
+    &lt;td&gt;Лимон&lt;/td&gt;
+    &lt;td&gt;45.5&lt;/td&gt;
+    &lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;2.&lt;/td&gt;
+    &lt;td&gt;Апельсин&lt;/td&gt;
+    &lt;td&gt;32,8&lt;/td&gt;
+    &lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;3.&lt;/td&gt;
+    &lt;td&gt;Банан&lt;/td&gt;
+    &lt;td&gt;24,99&lt;/td&gt;
+    &lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+                </textarea>
+                <div class="example" style="height: 150px; width: 300px">
+                    <table border="1">
+                        <thead>
+                        <tr>
+                            <th>Номер</th>
+                            <th>Имя продукта</th>
+                            <th>Цена</th>
+                            <th>Количество</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>Лимон</td>
+                            <td>45.5</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>Апельсин</td>
+                            <td>32,8</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>Банан</td>
+                            <td>24,99</td>
+                            <td>6</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 style="margin-top: 40px"><a name="tablename">Название таблицы</a></h4>
+
+                <p>
+                    Используя тег <b>&lt;caption&gt;&lt;/caption&gt;</b> таблице можно задать название. Сам тег следует поместить сразу же после открывающего тега <b>&lt;table&gt;</b>.
+                </p>
+
+                <div class="example" style="height: 150px; width: 270px">
+                    <table border="1" style="caption-side: top">
+                        <caption>Совершенные покупки</caption>
+                        <tr>
+                            <th>Номер</th>
+                            <th>Имя продукта</th>
+                            <th>Цена</th>
+                            <th>Количество</th>
+                        </tr>
+                        <tr>
+                            <td>1.</td>
+                            <td>Лимон</td>
+                            <td>45.5</td>
+                            <td>3</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 style="margin-top: 40px"><a name="spacing-padding">Cellspacing и Cellpadding</a></h4>
+
+                <p><b>Cellspasing</b> - атрибут таблицы, который устанавливает отступы между ячейками таблицы и от границы таблицы.</p>
+                <p><b>Cellpadding</b> - атрибут таблицы, который устанавливает отступы внутри ячейки, то есть отступы от границы ячейки до ее содержимого.</p>
+
+                <textarea readonly class="code-block" style="height: 250px">
+&lt;table border="1" cellpadding="5" cellspacing="10"&gt;
+&lt;tr&gt;
+    &lt;th&gt;Номер&lt;/th&gt;
+    &lt;th&gt;Имя продукта&lt;/th&gt;
+    &lt;th&gt;Цена&lt;/th&gt;
+    &lt;th&gt;Количество&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;1.&lt;/td&gt;
+    &lt;td&gt;Лимон&lt;/td&gt;
+    &lt;td&gt;45.5&lt;/td&gt;
+    &lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+                </textarea>
+                <div class="example" style="height: 150px; width: 400px">
+                    <table border="2" cellpadding="5" cellspacing="10" style="border-collapse: separate">
+                        <tr>
+                            <th>Номер</th>
+                            <th>Имя продукта</th>
+                            <th>Цена</th>
+                            <th>Количество</th>
+                        </tr>
+                        <tr>
+                            <td>1.</td>
+                            <td>Лимон</td>
+                            <td>45.5</td>
+                            <td>3</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h4 style="margin-top: 40px"><a name="col-row">Colspan и Rowspan</a></h4>
+
+                <p>
+                    <b>Colspan</b> - атрибут, устанавливающий число ячеек, которые должны быть объединены по горизонтали.
+                </p>
+                <p>
+                    <b>Rowspan</b> - атрибут, устанавливающий число ячеек, которые должны быть объединены по вертикали.
+                </p>
+
+                <textarea readonly class="code-block" style="height: 250px">
+&lt;table border="2" cellpadding="5" cellspacing="10" height="130px" width="300px"  style="border-collapse: separate"&gt;
+&lt;tr&gt;
+    &lt;td rowspan="4"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td colspan="4"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+                </textarea>
+                <div class="example" style="height: 150px; width: 400px">
+                    <table border="2" cellpadding="5" cellspacing="10" height="130px" width="300px"  style="border-collapse: separate">
+                        <tr>
+                            <td rowspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3 style="margin-bottom: 20px">Списки</h3>
+
+                <p>
+                    Списки предназначены для группировки связанных между собой фрагментов информации. Существует 3 вида списков:
+                </p>
+                <p>
+                    <b>&lt;ul&gt;&lt;/ul&gt;</b> - маркированный список. Каждый элемент списка представлен тегом
+                    <b>&lt;li&gt;&lt;/li&gt;</b> и отмечается маркером.
+                </p>
+                <p>
+                    <b>&lt;ol&gt;&lt;/ol&gt;</b> - нумерованный список. Каждый элемент списка представлен тегом
+                    <b>&lt;li&gt;&lt;/li&gt;</b> и отмечается цифрой.
+                </p>
+                <p>
+                    <b>&lt;dl&gt;&lt;/dl&gt;</b> - список определений. Состоит из пар термин (тег <b>&lt;dt&gt;&lt;/dt&gt;</b>) -
+                    определение (тег <b>&lt;dd&gt;&lt;/dd&gt;</b>).
+                </p>
+
+                <h4 style="margin-top: 40px"><a name="markedlist">Маркированный список</a></h4>
+
+                <p>
+                    Тег  <b>&lt;ul&gt;&lt;/ul&gt;</b> является контейнером для неупорядоченных список, расшифровывается как unordered list.
+                    Имеет атрибут type со следующими значениями: disc - маркер в форме черного круга, circle - маркер в
+                    форме пустого круга, square - черный закрашенный квадрат, none - без маркера.
+                </p>
+
+                <textarea readonly class="code-block" style="height: 250px">
+&lt;ul type="disc"&gt;
+&lt;li&gt;Microsoft&lt;/li&gt;
+&lt;li&gt;Google&lt;/li&gt;
+&lt;li&gt;Apple&lt;/li&gt;
+&lt;li&gt;IBM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul type="circle"&gt;
+&lt;li&gt;Microsoft&lt;/li&gt;
+&lt;li&gt;Google&lt;/li&gt;
+&lt;li&gt;Apple&lt;/li&gt;
+&lt;li&gt;IBM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul type="square"&gt;
+&lt;li&gt;Microsoft&lt;/li&gt;
+&lt;li&gt;Google&lt;/li&gt;
+&lt;li&gt;Apple&lt;/li&gt;
+&lt;li&gt;IBM&lt;/li&gt;
+&lt;/ul&gt;
+                </textarea>
+                <div class="example" style="height: 150px; width: 400px">
+                    <ul type="disc">
+                        <li>Microsoft</li>
+                        <li>Google</li>
+                        <li>Apple</li>
+                        <li>IBM</li>
+                    </ul>
+
+                    <ul type="circle">
+                        <li>Microsoft</li>
+                        <li>Google</li>
+                        <li>Apple</li>
+                        <li>IBM</li>
+                    </ul>
+
+                    <ul type="square">
+                        <li>Microsoft</li>
+                        <li>Google</li>
+                        <li>Apple</li>
+                        <li>IBM</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin-top: 40px"><a name="numberedlist">Нумерованный список</a></h4>
+
+                <p>
+                    Тег <b>&lt;ol&gt;&lt;/ol&gt;</b> является контейнером для упорядоченных списков, расшифровывается как ordered list.
+                    Имеет атрибут type со следующими значениями: А - нумерация большими латинскими буквами,
+                    а - маленькими латинскими буквами, I - большими римскими цифрами, i - маленькими римскими цифрами.
+                    По умолчанию для нумерации используются арабские цифры.
+                </p>
+                <p>
+                    Также можно применить атрибуты reversed - отображение списка в обратном порядке, start -
+                    указывает начальное значение от которого пойдет отсчет нумерации. К элементам списка можно применять
+                    атрибут value, который изменяет нумерацию.
+                </p>
+
+                <textarea readonly class="code-block" style="height: 250px">
+&lt;ol&gt;
+&lt;li&gt;Microsoft&lt;/li&gt;
+&lt;li&gt;Google&lt;/li&gt;
+&lt;li&gt;Apple&lt;/li&gt;
+&lt;li&gt;IBM&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol type="a"&gt;
+&lt;li&gt;Microsoft&lt;/li&gt;
+&lt;li&gt;Google&lt;/li&gt;
+&lt;li&gt;Apple&lt;/li&gt;
+&lt;li&gt;IBM&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol reversed&gt;
+&lt;li&gt;Microsoft&lt;/li&gt;
+&lt;li&gt;Google&lt;/li&gt;
+&lt;li&gt;Apple&lt;/li&gt;
+&lt;li&gt;IBM&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol start="5"&gt;
+&lt;li&gt;Microsoft&lt;/li&gt;
+&lt;li&gt;Google&lt;/li&gt;
+&lt;li value="8"&gt;Apple&lt;/li&gt;
+&lt;li&gt;IBM&lt;/li&gt;
+&lt;/ol&gt;
+                </textarea>
+                <div class="example" style="height: 150px; width: 400px">
+                    <ol>
+                        <li>Microsoft</li>
+                        <li>Google</li>
+                        <li>Apple</li>
+                        <li>IBM</li>
+                    </ol>
+
+                    <ol type="a">
+                        <li>Microsoft</li>
+                        <li>Google</li>
+                        <li>Apple</li>
+                        <li>IBM</li>
+                    </ol>
+
+                    <ol reversed>
+                        <li>Microsoft</li>
+                        <li>Google</li>
+                        <li>Apple</li>
+                        <li>IBM</li>
+                    </ol>
+
+                    <ol start="5">
+                        <li>Microsoft</li>
+                        <li>Google</li>
+                        <li value="8">Apple</li>
+                        <li>IBM</li>
+                    </ol>
+                </div>
+
+                <h4 style="margin-top: 40px"><a name="deflist">Список определений</a></h4>
+
+                <textarea readonly class="code-block" style="height: 200px">
+&lt;dl&gt;
+&lt;dt&gt;Молоко&lt;/dt&gt;
+&lt;dd&gt;Белый холодный напиток.&lt;/dd&gt;
+&lt;dt&gt;Кофе&lt;/dt&gt;
+&lt;dd&gt;Черный горячий напиток.&lt;/dd&gt;
+&lt;/dl&gt;
+                </textarea>
+                <div class="example" style="height: 150px; width: 400px">
+                    <dl>
+                        <dt>Молоко</dt>
+                        <dd>Белый холодный напиток.</dd>
+                        <dt>Кофе</dt>
+                        <dd>Черный горячий напиток.</dd>
+                    </dl>
+                </div>
+                <a href="css.html" style="color: black"><h3 style="margin-top: 40px">Следующая глава</h3></a>
+            </article>
+    </main>
+</body>
+</html>

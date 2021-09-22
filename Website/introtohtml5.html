@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html5 & CSS. Введение в HTML5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="resources/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="header" class="row" style="min-width: 1200px;">
+            <img src="resources/header_pic.png" usemap="#goHome">
+            <map name="goHome">
+                <area href="introtohtml5.html" shape="poly" coords="4, 33, 45, 0, 95, 33, 95, 66, 45, 95, 4, 66">
+            </map>
+            <nav class="navbar">
+                <div>
+                    HTML5 &nbsp;&nbsp;& &nbsp;&nbsp;CSS
+                </div>
+            </nav>
+            <div id="intro-to-html" onclick="location.href='introtohtml5.html'">
+                <img src="resources/introtohtml.png">
+            </div>
+            <div id="img-table-list" style="margin-left: 10px" onclick="location.href='listsandtables.html'">
+                <img src="resources/img-table-list.png">
+            </div>
+            <div id="css3" style="margin-left: 10px" onclick="location.href='css.html'">
+                <img src="resources/css3.png">
+            </div>
+        </div>
+    </header>
+    <main>
+            <nav id="content-block" style="float:left">
+                <div id="content-block-header">
+                    <h3>Содержание главы</h3>
+                </div>
+                <hr/>
+                <div id="content-block-body">
+                    <details open>
+                        <summary>Введение в HTML5</summary>
+                        <a href="#structure" class="ref"><span>Структура HTML страницы<br/></span></a>
+                        <a href="#rules" class="ref"><span>Правила при создании разметки<br/></span></a>
+                        <a href="#blocks" class="ref"><span>Блочные элементы<br/></span></a>
+                        <a href="#lines" class="ref"><span>Строчные элементы<br/></span></a>
+                        <a href="#phys" class="ref"><span>Теги физической разметки<br/></span></a>
+                        <a href="#logic" class="ref"><span>Теги логической разметки<br/></span></a>
+                        <a href="#links" class="ref"><span>Работа с ссылками<br/></span></a>
+                        <a href="#special" class="ref"><span>Специальные символы<br/></span></a>
+                    </details>
+                </div>
+            </nav>
+            <article class="content-main">
+                <h2 style="margin-bottom: 20px">1. Введение в HTML5</h2>
+                <p>
+                    <b>HTML</b> (HyperText Markup Language - язык разметки гипертекста) - стандартизированный язык
+                    разметки документов в интернете. Большинство веб-страниц содержат описание разметки на
+                    языке HTML. Язык HTML интерпретируется браузерами: полученный в результате интерпретации
+                    форматированный текст отображается на экране монитора.
+                </p>
+                <p>
+                    Язык HTML является приложением SGML (стандартного обобщенного языка  разметки) и соответствует
+                    международному стандарту ISO 8879. Язык XHTML является более строгим вариантом HTML,
+                    он следует всем ограничения XML и фактически XHTML можно воспринимать как приложение
+                    языка XML к области разметки гипертекста.
+                </p>
+                <p>
+                    Язык HTML разработан в 1986-1991 годах. Создавался как язык для обмена научной и технической
+                    документацией, пригодный для использования людьми, которые не являются специалистами в верстке.
+                </p>
+                <p>
+                    Основная составляющая языка HTML - <i>тег</i>.
+                </p>
+                <p>
+                    <b>Тег (дескриптор)</b> - элемент языка разметки гипертекста. Текст, содержащийся между начальным
+                    и конечным тегом, отображается и размещается в соответствии со свойствами, указанными в
+                    начальном теге.
+                </p>
+                <p>
+                    <b>Opening tag (&lt;)</b> - состоит из имени элемента, который заключен в угловые скобки.
+                    Указывает, где начинается элемент.
+                </p>
+                <p>
+                    <b>Closing tag (&gt;)</b> - то же самое, что открывающий тег, но содержит косую черту.
+                    Указывает, где элемент заканчивается.
+                </p>
+                <p>
+                    <b>Content</b> - содержимое тега, которое будет отображено пользователю.
+                </p>
+                <p>
+                    <b>Element</b> - открывающий тег, контент и закрывающий тег представляют собой цельный элемент HTML разметки.
+                </p>
+                <textarea readonly class="code-block">
+&lt;p>My cat is very grumpy&lt;p&gt;
+                </textarea>
+                <p>
+                    <b>Атрибуты</b> - элементы языка разметки, которые содержат дополнительную информацию об элементе.
+                </p>
+                <p>
+                    Атрибут должен иметь:<br/>
+                    - пробел между атрибутом и именем элемента<br/>
+                    - имя атрибута и следующий за ним знак равенства<br/>
+                    - значение атрибута, заключенное в кавычки
+                </p>
+                <textarea readonly class="code-block">
+&lt;p&gt;&lt;class="editor-note"&gt;My cat is very grumpy&lt;p&gt;
+                </textarea>
+                <h4 style="margin-bottom: 20px"><a name="structure">Структура HTML страницы</a></h4>
+                <textarea readonly class="code-block" style="height: 200px">
+&lt;html&gt;
+      &lt;head&gt;
+      ... ...
+      &lt;/head&gt;
+
+      &lt;body&gt;
+      ... ...
+      &lt;/body&gt;
+
+&lt;/html&gt;
+                </textarea>
+                <p>
+                    Тег <b>&lt;html&gt;</b> является контейнером, который заключает в себе все содержимое веб страницы, включая
+                    теги <b>&lt;head&gt;</b> и <b>&lt;body&gt;</b>.
+                </p>
+                <p>
+                    Тег <b>&lt;head&gt;</b> содержит в себе информацию о странице. В нем располагаются метатеги,
+                    ссылки на подключаемые модули.
+                </p>
+                <p>
+                    Тег <b>&lt;body&gt;</b> является контейнером для всего содержимого, которое будет отображено пользователю.
+                </p>
+                <h4><a name="rules">Правила при создании разметки</a></h4>
+                <p>- Все теги и их атрибуты должны быть набраны в нижнем регистре.</p>
+                <p>- Значения любых атрибутов необходимо заключать в кавычки.</p>
+                <p>- Требуется закрывать все теги, даже такие, которым не сопоставлен закрывающий тег.</p>
+                <p>- Должна соблюдаться правильная вложенность тегов.</p>
+                <p>- Нельзя использовать сокращенные атрибуты тегов.</p>
+                <p>- Вместо атрибута name следует указывать id.</p>
+                <p>- Следует определять DTD с помощью элемента &lt;!DOCTYPE&gt;.</p>
+                <p><b>&lt;!DOCTYPE&gt;</b></p>
+                <p>DTD - document type definition - описание типа документа</p>
+                <textarea readonly class="code-block" style="height: 150px">
+&lt;!DOCTYPE[Элемент верхнего уровня][Публичность]"[Регистрация]//[Организация]//[Тип][Имя]//[Язык]""[URL]"&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML4.01//EN""html://www.w3c.org/TR/html4/strict.dtd"&gt;
+                </textarea>
+                <p>
+                    Существует несколько типов &lt;!DOCTYPE&gt;, они различаются в зависимости от версии HTML,
+                    на которую ориентированы.
+                </p>
+                <table class="table" style="width: 600px;">
+                    <tr>
+                        <th>DOCTYPE</th>
+                        <th>Описание</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">HTML 4.01</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML4.01//EN""html://www.w3c.org/TR/html4/strict.dtd"&gt;</td>
+                        <td>Строгий синтаксис HTML</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML4.01 Transitional//EN"
+                            "html://www.w3c.org/TR/html4/strict.dtd"&gt;</td>
+                        <td>Переходный синтаксис HTML</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML4.01 Frameset//EN"
+                            "html://www.w3c.org/TR/html4/strict.dtd"&gt;</td>
+                        <td>В HTML документе применяются фреймы</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">HTML 5</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;!DOCTYPE html&gt;</td>
+                        <td>В этой версии только один доктайп</td>
+                    </tr>
+                </table>
+                <h4 style="margin-top: 40px"><a name="blocks">Блочные элементы</a></h4>
+                <p>
+                    Блочным называется элемент, который имеет форму прямоугольника. Такой элемент занимает
+                    всю доступную ширину, высота элемента определяется его содержимым и он всегда начинается
+                    с новой строки. К блочным элементам относятся контейнеры <b>&lt;div&gt;, &lt;p&gt; &lt;h1&gt;-&lt;h6&gt;</b>.
+                </p>
+                <p>Блочные элементы можно вкладывать друг в друга, а также можно в блочный элемент вложить строчные элементы.</p>
+                <p>Ширина блока состоит из следующих параметров:</p>
+                <p>
+                    - Ширина самого блока<br/>
+                    - Внешних отступов<br/>
+                    - Внутренних отступов (полей)<br/>
+                    - Границы блока<br/>
+                </p>
+                <p>
+                    Высота у блочных элементов вычисляется также, как и ширина.
+                    Если высота у блочного элемента не задана явно, то вычисляется исходя из объекма содержимого.
+                </p>
+                <p>
+                    При задании форма блочному элементу, завивается область, определяемая шириной,
+                    высотой и внутренними отступами (полями).
+                </p>
+                <p>
+                    При задачи рамки следует учитывать, что некоторые браузеры устанавливают заливку по
+                    внешнему краю границы, а некоторые - по внутреннему.
+                </p>
+                <div style="width: 300px; height: 60px; background: goldenrod; border: 8px dashed black; margin-bottom: 20px"></div>
+                <h5 style="margin-top: 10px"><b>Теги блочных элементов</b></h5>
+                <p>
+                    <b>&lt;div&gt;</b> - тег предназначен для выделения фрагмента документа с целью изменения вида содержимого.
+                    Вид блока задается с помощью стилей. Содержимое тега всегда начинается с новой строки.
+                </p>
+                <textarea readonly class="code-block" style="height: 150px">
+&lt;div&gt;
+    Это первый элемент DIV
+&lt;/div&gt;
+&lt;div&gt;
+    Это второй элемент DIV
+&lt;/div&gt;
+                </textarea>
+                <div class="example" style="height: 100px; width: 500px;">
+                    <div>
+                        Это первый элемент DIV
+                    </div>
+                    <div>
+                        Это второй элемент DIV
+                    </div>
+                </div>
+                <p>
+                    <b>&lt;p&gt;</b> - параграф является одной из основных семантических единиц. На странице могут
+                    размещаться несколько параграфов, при этом между ними автоматически создаются
+                    вертикальные отступы и после каждого параграфа делается перенос строки.
+                </p>
+                <textarea readonly class="code-block" style="height: 150px">
+&lt;p&gt;
+    Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+&lt;/p&gt;
+&lt;p&gt;
+    Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+&lt;/p&gt;
+                </textarea>
+                <div class="example" style="height: 100px; width: 1000px;">
+                    <p>
+                        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                    </p>
+                    <p>
+                        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                    </p>
+                </div>
+                <p>
+                    <b>&lt;pre&gt;</b> - тег определяет блок предварительно форматированного текста. Такой отображается,
+                    как правило, моноширинным шрифтом со всеми пробелами между словами.
+                </p>
+                <textarea readonly class="code-block" style="height: 130px">
+&lt;pre&gt;
+        Мороз и солнце;      день чудесный!
+        Еще ты дремлешь, друг прелестный –
+        Пора, красавица, проснись;
+        Открой сомкнуты негой взоры
+&lt;/pre&gt;
+                </textarea>
+                <div class="example" style="height: 110px; width: 600px;">
+                    <pre>
+        Мороз и солнце;      день чудесный!
+        Еще ты дремлешь, друг прелестный –
+        Пора, красавица, проснись;
+        Открой сомкнуты негой взоры
+                    </pre>
+                </div>
+                <p>
+                    <b>&lt;hr /&gt;</b> - отображает горизонтальную линию, которая по своему виду
+                    зависит от используемых параметров, а также от браузера. Линия всегда начинается с
+                    новой строки, и все элементы после нее отображаются с новой строки.
+                </p>
+                <textarea readonly class="code-block" style="height: 40px">
+&lt;h /&gt;
+                </textarea>
+                <div class="example" style="height: 40px; width: 600px">
+                    <hr />
+                </div>
+                <p>
+                    <b>&lt;br /&gt;</b> - делает перенос на следующую строку. Он не имеет содержимого,
+                    поэтому в конце располагается символ /.
+                </p>
+                <textarea readonly class="code-block" style="height: 150px">
+&lt;p&gt;
+    Мороз и солнце; день чудесный!      &lt;br /&gt;
+    Еще ты дремлешь, друг прелестный –  &lt;br /&gt;
+    Пора, красавица, проснись;          &lt;br /&gt;
+    Открой сомкнуты негой взоры         &lt;br /&gt;
+&lt;/p&gt;
+                </textarea>
+                <div class="example" style="height: 130px; width: 600px">
+                    <p>
+                        Мороз и солнце; день чудесный!      <br />
+                        Еще ты дремлешь, друг прелестный –  <br />
+                        Пора, красавица, проснись;          <br />
+                        Открой сомкнуты негой взоры         <br />
+                    </p>
+
+                </div>
+                <p>Заголовки <b>&lt;h1&gt;-&lt;h6&gt;</b> предназначены для структурирования контента в странице подобно структуре
+                    книги - название, разделы, подразделы и т.д. В HTML определено 6 уровней заголовков,
+                    они разделены по важности, h1 - наиболее важные, h6 - самые незначительные.
+                </p>
+                <textarea readonly class="code-block" style="height: 150px">
+&lt;h1&gt;Заголовок первого уровня&lt;/h1&gt;
+&lt;h2&gt;Заголовок второго уровня&lt;/h2&gt;
+&lt;h3&gt;Заголовок третьего уровня&lt;/h3&gt;
+&lt;h4&gt;Заголовок четвертого уровня&lt;/h4&gt;
+&lt;h5&gt;Заголовок пятого уровня&lt;/h5&gt;
+&lt;h6&gt;Заголовок шестого уровня&lt;/h6&gt;
+                </textarea>
+                <div class="example" style="height: 200px; width: 600px">
+                    <h1>Заголовок первого уровня</h1>
+                    <h2>Заголовок второго уровня</h2>
+                    <h3>Заголовок третьего уровня</h3>
+                    <h4 style="text-decoration: none">Заголовок четвертого уровня</h4>
+                    <h5>Заголовок пятого уровня</h5>
+                    <h6>Заголовок шестого уровня</h6>
+                </div>
+                <h4 style="margin-top: 40px"><a name="lines">Строчные элементы</a></h4>
+                <p>
+                    Строчными называются элементы, которые являются частью другого элемента и используются,
+                    как правило, для изменения части текста либо его логического форматирования. К строчным
+                    элементам можно отнести: <b>&lt;a&gt;, &lt;span&gt;, &lt;code&gt;</b>.
+                </p>
+                <p>Также строчные элементы могут применяться для изменения положения слоев.</p>
+                <p>Разница между строчными и блочными элементами:</p>
+                <p>- Строчные элементы могут содержать только данные и другие строчные элементы.</p>
+                <p>- Блочные размещаются с новой строки, строчные же такого эффекта не имеют.</p>
+                <p>- Ширина строчных элементов определяется по их содержимому, отступам и границам. </p>
+                <h5 style="margin-top: 10px"><b>Теги строчных элементов</b></h5>
+                <p>
+                    <b>&lt;a&gt;</b> - тег является контейнером, все текстовое содержимое этого тега является ссылкой.
+                    У тега есть следующие атрибуты: href, name, target, title и т.д.
+                </p>
+                <textarea readonly class="code-block" style="height: 150px">
+&lt;a href="https://google.com"&gt;Ссылка&lt;/a&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 200px">
+                    <a href="https://google.com">Ссылка</a>
+                </div>
+                <p>
+                    &lt;span&gt; - тег предназначен для определения строчных элементов документа.
+                    С помощью данного тега можно выделить часть информации внутри других тегов и установить для нее свой стиль.
+                </p>
+
+                <h4 style="margin-top: 40px"><a name="phys">Теги физической разметки</a></h4>
+
+                <p><b>&lt;b&gt;…&lt;/b&gt;</b> - придает тексту жирное начертание.</p>
+                <textarea readonly class="code-block" style="height: 40px">
+&lt;b&gt;Жирный текст&lt;/b&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 200px">
+                    <b>Жирный текст</b>
+                </div>
+                <p>
+                    <b>&lt;bdi&gt;…&lt;/bdi&gt;</b> - указывает фрагмент текста, который должен быть изолирован от
+                    изменения направления вывода текста (HTML5).
+                </p>
+                <textarea readonly class="code-block" style="height: 40px">
+&lt;p dir="rtl"&gt;&lt;bdi&gt;שבת&lt;/bdi&gt; — суббота&lt;/p&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 200px">
+                    <p dir="rtl"><bdi>שבת</bdi> — суббота</p>
+                </div>
+                <p><b>&lt;bdo&gt;…&lt;/bdo&gt;</b> - устанавливает направление вывода текста.</p>
+                <textarea readonly class="code-block" style="height: 120px">
+Tincidunt &lt;bdo dir="rtl"&gt;&lt;b>integer eu augue augue&lt;/b&gt;&lt;/bdo&gt; nunc elit dolor, luctus placerat scelerisqu euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                </textarea>
+                <div class="example" style="height: 100px; width: 600px">
+                    Tincidunt <bdo dir="rtl"><b>integer eu augue augue</b></bdo> nunc elit dolor, luctus placerat
+                    scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet
+                    justo nunc tempor, metus vel.
+                </div>
+                <p><b>&lt;i&gt;…&lt;/i&gt;</b> - придает тексту курсивное начертание.</p>
+                <textarea readonly class="code-block" style="height: 40px">
+&lt;i&gt;Курсивный текст&lt;/i&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 200px">
+                    <i>Курсивный текст</i>
+                </div>
+                <p><b>&lt;s&gt;…&lt;/s&gt;</b> - отображает текст как перечеркнутый.</p>
+                <textarea readonly class="code-block" style="height: 40px">
+&lt;s&gt;Перечеркнутый текст&lt;/s&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 200px">
+                    <s>Перечеркнутый текст</s>
+                </div>
+                <p><b>&lt;small&gt;…&lt;/small&gt;</b> - делает текст на одну условную единицу меньше.</p>
+                <textarea readonly class="code-block" style="height: 40px">
+Нормальный текст &lt;small&gt;Маленький текст&lt;/small&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 300px">
+                    Нормальный текст <small>Маленький текст</small>
+                </div>
+
+                <p><b>&lt;big&gt;…&lt;/big&gt;</b> - делает текст на одну условную единицу больше.</p>
+                <textarea readonly class="code-block" style="height: 40px">
+Нормальный текст &lt;big&gt;Большой текст&lt;/big&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 300px">
+                    Нормальный текст <big>Большой текст</big>
+                </div>
+
+                <p><b>&lt;sup&gt;…&lt;/sup&gt;</b> - помещает содержимое в верхний индекс.</p>
+                <textarea readonly class="code-block" style="height: 40px">
+Нормальный текст &lt;sup&gt;Текст в верхнем индексе&lt;/sup&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 300px">
+                    Нормальный текст <sup>Текст в верхнем индексе</sup>
+                </div>
+
+                <p><b>&lt;sub&gt;…&lt;/sub&gt;</b> - помещает содержимое в нижний индекс.</p>
+                <textarea readonly class="code-block" style="height: 40px">
+Нормальный текст &lt;sub&gt;Текст в нижнем индексе&lt;/sub&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 300px">
+                    Нормальный текст <sub>Текст в нижнем индексе</sub>
+                </div>
+
+                <p><b>&lt;meter&gt;…&lt;/meter&gt;</b> - используется для вывода значения в некотором известном диапазоне (HTML5).</p>
+                <textarea readonly class="code-block" style="height: 120px">
+&lt;meter value="20" max="100" min="0" low="25" high="75"&gt;Показания датчиков низкие&lt;/meter&gt;
+&lt;meter value="50" max="100" min="0" low="25" high="75"&gt;Показания датчиков средние&lt;/meter&gt;
+&lt;meter value="80" max="100" min="0" low="25" high="75"&gt;Показания датчиков высокие&lt;/meter&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 300px">
+                    <meter value="20" max="100" min="0" low="25" high="75">Показания датчиков низкие</meter>
+                    <meter value="50" max="100" min="0" low="25" high="75">Показания датчиков средние</meter>
+                    <meter value="80" max="100" min="0" low="25" high="75">Показания датчиков высокие</meter>
+                </div>
+
+                <p><b>&lt;progress&gt;…&lt;/progress&gt;</b> - используется для отображения прогресса завершенности (HTML5).</p>
+                <textarea readonly class="code-block" style="height: 120px">
+&lt;progress value="78" max="100"&gt;
+    Загружено на &lt;span id="value"&gt;78&lt;/span&gt;%
+&lt;/progress&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 300px">
+                    <progress value="78" max="100">
+                        Загружено на <span id="value">78</span>%
+                    </progress>
+                </div>
+
+                <h4 style="margin-top: 40px"><a name="logic">Теги логической разметки</a></h4>
+
+                <p>
+                    Логическое форматирование текста - форматирование текста, предназначенное для
+                    удобства работы с ним поисковых систем и прочих программ.
+                </p>
+
+                <p>
+                    <b>&lt;abbr&gt;…&lt;/abbr&gt;</b> - указывает, что текст внутри элемента является аббревиатурой.
+                    В атрибуте title указывают полное значение аббревиатуры.
+                </p>
+                <textarea readonly class="code-block" style="height: 60px">
+&lt;abbr title="Hyper Text Markup Language"&gt;HTML&lt;/abbr&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 300px">
+                    <abbr title="Hyper Text Markup Language">HTML</abbr>
+                </div>
+
+                <p><b>&lt;cite&gt;…&lt;/cite&gt;</b> - текст является сноской или цитатой.</p>
+                <textarea readonly class="code-block" style="height: 150px">
+&lt;p&gt;
+    Мороз и солнце; день чудесный!      &lt;br /&gt;
+    Еще ты дремлешь, друг прелестный –  &lt;br /&gt;
+    Пора, красавица, проснись;          &lt;br /&gt;
+    Открой сомкнуты негой взоры         &lt;br /&gt;
+&lt;/p&gt;
+&lt;cite&gt;
+    http://pushkin.niv.ru/
+&lt;/cite&gt;
+                </textarea>
+                <div class="example" style="height: 150px; width: 500px">
+                    <p>
+                        Мороз и солнце; день чудесный!      <br />
+                        Еще ты дремлешь, друг прелестный –  <br />
+                        Пора, красавица, проснись;          <br />
+                        Открой сомкнуты негой взоры         <br />
+                    </p>
+                    <cite>
+                        http://pushkin.niv.ru/
+                    </cite>
+                </div>
+
+                <p><b>&lt;strong&gt;…&lt;/strong&gt;</b> - задает тексту жирное начертание.</p>
+                <textarea readonly class="code-block" style="height: 60px">
+&lt;strong&gt;Жирный текст&lt;/strong&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 300px">
+                    <strong>Жирный текст</strong>
+                </div>
+
+                <p><b>&lt;em&gt;…&lt;/em&gt;</b> - задает тексту курсивное начертание.</p>
+                <textarea readonly class="code-block" style="height: 60px">
+&lt;em&gt;Курсивный текст&lt;/em&gt;
+                </textarea>
+                <div class="example" style="height: 50px; width: 300px">
+                    <em>Курсивный текст</em>
+                </div>
+
+                <h4 style="margin-top: 40px"><a name="links">Работа с ссылками</a></h4>
+
+                <p>Тег <b>&lt;a&gt;</b> позволяет создать ссылку на другую страницу сайта или на внешний ресурс.</p>
+                <p>Атрибуты:</p>
+                <p>- accesskey - активация ссылки комбинацией клавиш</p>
+                <p>- download - предложение скачать указанный файл</p>
+                <p>- href - задает адрес документа, по которому происходит переход</p>
+                <p>- name - имя якоря внутри документа</p>
+                <p>- target - имя окна или фрейма, куда необходимо загружать страницу</p>
+                <p>- title - устанавливает всплывающую подсказку</p>
+                <p>- type - указывает MIME-тип документа, на который ведет ссылка</p>
+
+                <textarea readonly class="code-block" style="height: 100px">
+&lt;a href="listsandtables.html" title="Чтобы перейти на следующую страницу нажмите на ссылку.">Ссылка на следующую станицу&lt;/a&gt;
+&lt;a href="http://google.com.ua" accesskey="t" target="_blank" title="GOOGLE">Ссылка на внешний ресурс&lt;/a&gt;
+&lt;a href="#" target="_self">Ссылка на эту же страницу&lt;/a&gt;
+                </textarea>
+                <div class="example" style="height: 100px; width: 300px">
+                    <a href="listsandtables.html" title="Чтобы перейти на следующую страницу нажмите на ссылку.">Ссылка на следующую станицу</a><br/>
+                    <a href="http://google.com" accesskey="t" target="_blank" title="GOOGLE">Ссылка на внешний ресурс</a><br/>
+                    <a href="#" target="_self">Ссылка на эту же страницу</a>
+                </div>
+
+                <p>
+                    Якорь - это значение в тексте на которое можно создать ссылку. Для этого необходимо проименовать
+                    якорь, дав ему имя name, а в ссылке на него указать сперва ссылку на себя #, а затем имя.
+                </p>
+                <p>
+                    Валидация - это проверка документа на соответствует веб-стандартам и выявление существующих ошибок.
+                    Валидным является такой веб-документ, который прошел подобную процедуру и не имеет замечаний по коду.
+                    Код веб-страницы должен подчиняться определенным правилам, которые называются спецификацией.
+                </p>
+
+                <h4 style="margin-top: 40px"><a name="special">Специальные символы</a></h4>
+
+                <p>
+                    Для отображения специальных символов, которых нет на клавиатуре, или символов, которые
+                    воспринимаются браузером как часть разметки, применяются специальные символы, которые начинаются
+                    с амперсанда & и заканчиваются точкой с запятой ;.
+                </p>
+                <table class="table" style="width: 600px">
+                    <tr>
+                        <th>Имя</th>
+                        <th>Символ</th>
+                        <th>Описание</th>
+                    </tr>
+                    <tr>
+                        <td><span>&</span>lt;</td>
+                        <td>&lt;</td>
+                        <td>Знак меньше</td>
+                    </tr>
+                    <tr>
+                        <td><span>&</span>gt;</td>
+                        <td>&gt;</td>
+                        <td>Знак больше</td>
+                    </tr>
+                    <tr>
+                        <td><span>&</span>nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>Символ неразрывного пробела</td>
+                    </tr>
+                    <tr>
+                        <td><span>&</span>shy;</td>
+                        <td>&shy;</td>
+                        <td>Символ мягкого переноса</td>
+                    </tr>
+                    <tr>
+                        <td><span>&</span>rdquo;</td>
+                        <td>&rdquo;</td>
+                        <td>Правая двойная кавычка</td>
+                    </tr>
+                    <tr>
+                        <td><span>&</span>ldquo;</td>
+                        <td>&ldquo;</td>
+                        <td>Левая двойная кавычка</td>
+                    </tr>
+                    <tr>
+                        <td><span>&</span>amp;</td>
+                        <td>&amp;</td>
+                        <td>Символ амперсанда</td>
+                    </tr>
+                </table>
+                <a href="listsandtables.html" style="color: black"><h3 style="margin-top: 40px">Следующая глава</h3></a>
+            </article>
+
+    </main>
+</body>
+</html>

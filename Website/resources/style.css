@@ -1,0 +1,175 @@
+header {
+    position: fixed;
+    padding: 5px 20px;
+    text-align: center;
+    background-color: lightskyblue;
+    width: 100%;
+    height: 130px;
+    border-bottom: 1px solid black;
+    z-index: 100;
+}
+header div img {
+    width: 120px;
+}
+header div nav div{
+    width: 270px;
+    text-align: left;
+    font-family: "Staatliches";
+    font-size: 50px;
+    text-weight: bald;
+    font-stretch: expanded;
+    text-shadow: 0 3px white;
+}
+
+#intro-to-html, #img-table-list, #css3, #semantics, #positioning, #forms {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 15px;
+    line-height: 17px;
+    font-family: "Staatliches", cursive;
+}
+#intro-to-html img, #img-table-list img, #css3 img, #semantics img, #positioning img, #forms img{
+    width: 100px;
+    margin-top: 10px;
+}
+#intro-to-html:hover, #img-table-list:hover, #css3:hover, #semantics:hover, #positioning:hover, #forms:hover{
+    background-color: aqua;
+}
+
+#content-block {
+    margin-top: 130px;
+    border-right: 1px solid black;
+    width: 300px;
+    height: 85%;
+    position: fixed;
+    overflow: auto;
+}
+#content-block-header {
+    margin-top: 10px;
+    font-family: "Times New Roman";
+    text-align: center;
+}
+#content-block-body  {
+    font-family: "Times New Roman";
+    text-align: left;
+    margin-left: 10px;
+}
+#content-block-body details {
+    font-size: 23px;
+}
+#content-block-body details summary {
+    font-size: 23px;
+}
+#content-block-body details span {
+    font-size: 18px;
+}
+.ref {
+    color: black;
+    text-decoration: none;
+}
+.content-main {
+    min-width: 500px;
+    font-family: "Times New Roman", "Arial", "Comic Sans MS";
+    margin-left: 300px;
+    margin-top: 130px;
+    position: absolute;
+    z-index: 1;
+    padding: 50px;
+}
+.content-main h4 {
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+.content-main p {
+    font-size: 20px;
+}
+.content-main li {
+    font-size: 20px;
+}
+.code-block {
+    width: 100%;
+    margin-bottom: 20px;
+    resize:none;
+    font-size: 20px;
+    font-family: "Courier New";
+}
+.table {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 2px;
+    margin-bottom: 15px;
+}
+.table th, td {
+    border: 1px solid black;
+}
+.example {
+    overflow: auto;
+    background-color: lightgoldenrodyellow;
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#demonstration-link-visited-hover:hover {
+    font-size: 30px;
+    color:indigo;
+    background-color: aqua;
+}
+#demonstration-link-visited-hover:active {
+    font-size: 50px;
+    color:brown;
+    background-color: red;
+}
+#demonstration-link-active-hover:link {
+    font-style: italic;
+    font-family: "Comic Sans MS";
+}
+#demonstration-empty :empty {
+    background-color: blueviolet;
+}
+#demonstration-children p:first-child {
+    color: brown;
+}
+#demonstration-children p:last-child {
+    color: chartreuse;
+}
+#demonstration-not:not(h6) {
+    color: crimson;
+}
+#demonstration-only-child p:only-child {
+    background-color: chocolate;
+}
+#demonstration-only-of-type p:only-of-type{
+    background-color: cornflowerblue;
+}
+
+#demonstration-after::after {
+    content: '- Дополнение';
+}
+#demonstration-before::before {
+    content: 'Дополнение -';
+}
+#demonstration-first-letter::first-letter {
+    color: crimson;
+    font-size: 30px;
+}
+#demonstration-selection::selection {
+    color: chartreuse;
+    background-color: darkblue;
+}
+
+#table-demonstration table {
+    border: 3px solid black;
+    width: 400px;
+    border-collapse: separate;
+    border-spacing: 5px;
+    empty-cells: hide;
+}
+#table-demonstration-table th{
+    padding: 5px;
+    border: 3px solid black;
+}
+
+
+
+
